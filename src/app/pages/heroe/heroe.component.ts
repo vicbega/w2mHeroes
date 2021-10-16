@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { HeroeModel } from '../../models/heroe.model';
@@ -11,15 +11,25 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
-  styleUrls: ['./heroe.component.css']
+  styleUrls: ['./heroe.component.scss']
 })
 export class HeroeComponent implements OnInit {
 
+  exampleForm: FormGroup;
+
   heroe: HeroeModel = new HeroeModel();
 
-
-  constructor(private heroesService: HeroesService,
-    private route: ActivatedRoute) { }
+  constructor(
+    private heroesService: HeroesService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {
+    this.exampleForm = this.formBuilder.group({
+      heroeIdFormControl: ['',],
+      heroeNameFormControl: ['',],
+      heroePowerFormControl: ['',]
+    });
+  }
 
   ngOnInit() {
 
@@ -31,18 +41,21 @@ export class HeroeComponent implements OnInit {
         .subscribe((resp: HeroeModel) => {
           this.heroe = resp;
           this.heroe.id = id;
+          this.exampleForm.get('heroeIdFormControl')?.setValue(this.heroe.id);
+          this.exampleForm.get('heroeNameFormControl')?.setValue(this.heroe.nombre);
+          this.exampleForm.get('heroePowerFormControl')?.setValue(this.heroe.poder);
         });
 
     }
 
   }
 
-  guardar(form: NgForm) {
+  guardar() {
 
-    if (form.invalid) {
-      console.log('Formulario no válido');
-      return;
-    }
+    // if (form.invalid) {
+    //   console.log('Formulario no válido');
+    //   return;
+    // }
 
     Swal.fire(
       'Espere',
@@ -51,6 +64,9 @@ export class HeroeComponent implements OnInit {
     );
     Swal.showLoading();
 
+    this.heroe.id = this.exampleForm.value.heroeIdFormControl;
+    this.heroe.nombre = this.exampleForm.value.heroeNameFormControl;
+    this.heroe.poder = this.exampleForm.value.heroePowerFormControl;
 
     let peticion: Observable<any>;
 

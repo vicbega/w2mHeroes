@@ -18,17 +18,16 @@
 <div class="row animated fadeIn faster">
   <div class="col">
 
-    <form (ngSubmit)="guardar( f )"
-          #f="ngForm">
+    <form (ngSubmit)="guardar()"
+          [formGroup]="exampleForm">
 
       <div class="form-group">
         <label>Firebase ID</label>
         <input type="text"
                class="form-control"
                placeholder="Firebase ID"
-               [(ngModel)]="heroe.id"
-               name="id"
-               disabled="disabled">
+               formControlName="heroeIdFormControl"
+               name="id">
         <small class="form-text text-muted">Este campo es autogenerado</small>
       </div>
 
@@ -38,7 +37,7 @@
           <input type="text"
                  class="form-control"
                  placeholder="Nombre del héroe"
-                 [(ngModel)]="heroe.nombre"
+                 formControlName="heroeNameFormControl"
                  name="nombre"
                  appUppercase
                  required>
@@ -48,7 +47,7 @@
           <label>Poder</label>
           <input type="text"
                  class="form-control"
-                 [(ngModel)]="heroe.poder"
+                 formControlName="heroePowerFormControl"
                  name="poder"
                  placeholder="Poder del héroe">
       </div>

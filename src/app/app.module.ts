@@ -6,24 +6,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeroeComponent } from './pages/heroe/heroe.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
 import { BuscadorComponent } from './pages/buscador/buscador.component';
-import { UppercaseDirective } from './directives/uppercase.directive';
+import { HeroesModule } from './pages/heroes/heroes.module';
+import { HeroeModule } from './pages/heroe/heroe.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroeComponent,
-    HeroesComponent,
-    BuscadorComponent,
-    UppercaseDirective
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HeroesModule,
+    HeroeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
