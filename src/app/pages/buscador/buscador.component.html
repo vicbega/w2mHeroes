@@ -1,0 +1,11 @@
+<h1>Listado de Héroes</h1>
+<hr>
+
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe"
+    (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+  <button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0"
+    type="button">Buscar</button>
+</form>
+
+<app-heroes [heroes]=heroes></app-heroes>

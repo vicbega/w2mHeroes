@@ -1,0 +1,46 @@
+{
+  "heroes": [
+    {
+      "id": 0,
+      "nombre": "Aquaman",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 1,
+      "nombre": "Batman",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 2,
+      "nombre": "Daredevil",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 3,
+      "nombre": "Hulk",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 4,
+      "nombre": "Linterna Verde",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 5,
+      "nombre": "Spider-Man",
+      "poder": "Habla con los peces",
+      "vivo": true
+    },
+    {
+      "id": 6,
+      "nombre": "Wolverine",
+      "poder": "Habla con los peces",
+      "vivo": true
+    }
+  ]
+}
