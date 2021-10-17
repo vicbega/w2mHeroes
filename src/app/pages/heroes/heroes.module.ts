@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { HeroesComponent } from './heroes.component';
+import { HeroesRoutingModule } from './heroes-routing.module';
 
 
 
@@ -9,7 +9,7 @@ import { HeroesComponent } from './heroes.component';
   declarations: [HeroesComponent],
   imports: [
     CommonModule,
-    RouterModule
+    HeroesRoutingModule
   ],
   exports: [HeroesComponent]
 })

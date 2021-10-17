@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { HeroeComponent } from './pages/heroe/heroe.component';
-import { BuscadorComponent } from './pages/buscador/buscador.component';
-
 const routes: Routes = [
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'buscador', component: BuscadorComponent },
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'heroe/:id', component: HeroeComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'heroes' }
+  {
+    path: 'buscador',
+    loadChildren: () => import('./pages/buscador/buscador.module').then(m => m.BuscadorModule)
+  },
+  {
+    path: 'heroes',
+    loadChildren: () => import('./pages/heroes/heroes.module').then(m => m.HeroesModule)
+  },
+  {
+    path: 'heroe/:id',
+    loadChildren: () => import('./pages/heroe/heroe.module').then(m => m.HeroeModule)
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
-
-
 
 @NgModule({
   imports: [
-    RouterModule.forRoot( routes )
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule

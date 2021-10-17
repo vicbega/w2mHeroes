@@ -6,22 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BuscadorComponent } from './pages/buscador/buscador.component';
-import { HeroesModule } from './pages/heroes/heroes.module';
-import { HeroeModule } from './pages/heroe/heroe.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BuscadorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    HeroesModule,
-    HeroeModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
