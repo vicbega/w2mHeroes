@@ -25,10 +25,10 @@
       "live": true
     },
     {
-      "id": 4,
-      "name": "Linterna Verde",
+      "name": "LINTERNA VERDEE",
       "power": "Habla con los peces",
-      "live": true
+      "live": true,
+      "id": 4
     },
     {
       "id": 5,

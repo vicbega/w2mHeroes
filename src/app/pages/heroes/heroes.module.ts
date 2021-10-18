@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 
@@ -11,7 +14,10 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     HeroesRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [HeroesComponent]
 })
