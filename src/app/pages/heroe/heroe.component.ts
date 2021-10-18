@@ -19,7 +19,7 @@ export class HeroeComponent implements OnInit {
 
   heroeForm: FormGroup;
 
-  heroe: HeroeModel = new HeroeModel();
+  heroe: HeroeModel;
 
   loading: boolean = false;
 
@@ -34,6 +34,7 @@ export class HeroeComponent implements OnInit {
       heroeNameFormControl: ['',],
       heroePowerFormControl: ['',]
     });
+    this.heroe = {};
   }
 
   ngOnInit() {

@@ -93,6 +93,7 @@ export class HeroesComponent implements OnInit, AfterViewInit {
       if (resp.value) {
         this.heroes.splice(i, 1);
         this.heroesService.deleteHeroe(heroe.id).subscribe();
+        this.dataSource.data = this.heroes;
       }
     });
   }
