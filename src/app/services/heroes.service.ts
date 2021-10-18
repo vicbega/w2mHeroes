@@ -17,7 +17,7 @@ export class HeroesService {
   constructor(private http: HttpClient) { }
 
 
-  crearHeroe(heroe: HeroeModel) {
+  createHeroe(heroe: HeroeModel) {
 
     return this.http.post(`${this.url}heroes`, heroe)
       .pipe(
@@ -29,7 +29,7 @@ export class HeroesService {
 
   }
 
-  actualizarHeroe(heroe: HeroeModel) {
+  updateHeroe(heroe: HeroeModel) {
 
     const heroeTemp = {
       ...heroe
@@ -42,7 +42,7 @@ export class HeroesService {
 
   }
 
-  borrarHeroe(id: string | null | undefined) {
+  deleteHeroe(id: string | null | undefined) {
 
     return this.http.delete(`${this.url}heroes/${id}`);
 
@@ -81,7 +81,7 @@ export class HeroesService {
 
   // }
 
-  buscarHeroes(termino: string) {
+  searchHeroes(termino: string) {
 
     let heroesArr: any[] = [];
     termino = termino.toLowerCase();
@@ -99,7 +99,7 @@ export class HeroesService {
 
     // }
 
-    return this.http.get(`${this.url}heroes?nombre_like=` + termino);
+    return this.http.get(`${this.url}heroes?name_like=` + termino);
 
   }
 

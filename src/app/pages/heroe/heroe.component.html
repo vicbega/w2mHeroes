@@ -6,7 +6,7 @@
 <div class="row text-right">
   <div class="col">
     <button class="btn btn-danger"
-            routerLink="/buscador">
+            routerLink="/search">
       <i class="fa fa-arrow-left"></i>
       Regresar
     </button>
@@ -18,7 +18,7 @@
 <div class="row animated fadeIn faster">
   <div class="col">
 
-    <form (ngSubmit)="guardar()"
+    <form (ngSubmit)="save()"
           [formGroup]="exampleForm">
 
       <div class="form-group">
@@ -56,15 +56,15 @@
         <label>Estado</label>
         <br>
 
-        <button *ngIf="heroe.vivo" 
-                (click)="heroe.vivo = false"
+        <button *ngIf="heroe.live" 
+                (click)="heroe.live = false"
                 class="btn btn-outline-success w-50" type="button">
           <i class="fa fa-smile-wink"></i>
           Vivo
         </button>
 
-        <button *ngIf="!heroe.vivo" 
-                (click)="heroe.vivo = true"
+        <button *ngIf="!heroe.live" 
+                (click)="heroe.live = true"
                 class="btn btn-outline-danger w-50" type="button">
             <i class="fa fa-dizzy"></i>
             Muerto

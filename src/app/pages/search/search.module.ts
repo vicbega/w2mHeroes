@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BuscadorComponent } from './buscador.component';
-import { BuscadorRoutingModule } from './buscador-routing.module';
+import { SearchComponent } from './search.component';
+import { SearchRoutingModule } from './search-routing.module';
 import { HeroesModule } from '../heroes/heroes.module';
 
 
 
 @NgModule({
   declarations: [
-    BuscadorComponent
+    SearchComponent
   ],
   imports: [
     CommonModule,
-    BuscadorRoutingModule,
+    SearchRoutingModule,
     HeroesModule
   ],
-  exports: [BuscadorComponent]
+  exports: [SearchComponent]
 })
-export class BuscadorModule { }
+export class SearchModule { }

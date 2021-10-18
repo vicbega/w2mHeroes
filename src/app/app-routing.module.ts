@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'buscador',
-    loadChildren: () => import('./pages/buscador/buscador.module').then(m => m.BuscadorModule)
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule)
   },
   {
     path: 'heroes',

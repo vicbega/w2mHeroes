@@ -42,15 +42,15 @@ export class HeroeComponent implements OnInit {
           this.heroe = resp;
           this.heroe.id = id;
           this.exampleForm.get('heroeIdFormControl')?.setValue(this.heroe.id);
-          this.exampleForm.get('heroeNameFormControl')?.setValue(this.heroe.nombre);
-          this.exampleForm.get('heroePowerFormControl')?.setValue(this.heroe.poder);
+          this.exampleForm.get('heroeNameFormControl')?.setValue(this.heroe.name);
+          this.exampleForm.get('heroePowerFormControl')?.setValue(this.heroe.power);
         });
 
     }
 
   }
 
-  guardar() {
+  save() {
 
     // if (form.invalid) {
     //   console.log('Formulario no válido');
@@ -65,21 +65,21 @@ export class HeroeComponent implements OnInit {
     Swal.showLoading();
 
     this.heroe.id = this.exampleForm.value.heroeIdFormControl;
-    this.heroe.nombre = this.exampleForm.value.heroeNameFormControl;
-    this.heroe.poder = this.exampleForm.value.heroePowerFormControl;
+    this.heroe.name = this.exampleForm.value.heroeNameFormControl;
+    this.heroe.power = this.exampleForm.value.heroePowerFormControl;
 
     let peticion: Observable<any>;
 
     if (this.heroe.id) {
-      peticion = this.heroesService.actualizarHeroe(this.heroe);
+      peticion = this.heroesService.updateHeroe(this.heroe);
     } else {
-      peticion = this.heroesService.crearHeroe(this.heroe);
+      peticion = this.heroesService.createHeroe(this.heroe);
     }
 
     peticion.subscribe(resp => {
 
       Swal.fire(
-        this.heroe.nombre,
+        this.heroe.name,
         'Se actualizó correctamente',
         'success'
       );

@@ -27,17 +27,17 @@ export class HeroesComponent implements OnInit {
 
   }
 
-  borrarHeroe( heroe: HeroeModel, i: number ) {
+  deleteHeroe( heroe: HeroeModel, i: number ) {
 
     Swal.fire(
       '¿Está seguro?',
-      `Está seguro que desea borrar a ${ heroe.nombre }`,
+      `Está seguro que desea borrar a ${ heroe.name }`,
       'question'
     ).then( resp => {
 
       if ( resp.value ) {
         this.heroes.splice(i, 1);
-        this.heroesService.borrarHeroe( heroe.id ).subscribe();
+        this.heroesService.deleteHeroe( heroe.id ).subscribe();
       }
 
     });

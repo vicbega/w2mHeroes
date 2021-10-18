@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-buscador',
-  templateUrl: './buscador.component.html'
+  selector: 'app-search',
+  templateUrl: './search.component.html'
 })
-export class BuscadorComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   heroes: any;
   heroes$: Observable<any[]> | undefined;
@@ -41,9 +41,9 @@ export class BuscadorComponent implements OnInit {
 
   }
 
-  buscarHeroe(termino: string) {
+  searchHeroe(termino: string) {
 
-    this.heroesService.buscarHeroes(termino)
+    this.heroesService.searchHeroes(termino)
       .subscribe( resp => {
         this.heroes = resp;
       });

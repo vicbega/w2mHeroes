@@ -3,15 +3,15 @@
 export class HeroeModel {
 
     id?: string | null;
-    nombre?: string;
-    poder?: string;
-    vivo?: boolean;
+    name?: string;
+    power?: string;
+    live?: boolean;
 
     constructor() {
         this.id = '';
-        this.nombre = '';
-        this.poder = '';
-        this.vivo = true;
+        this.name = '';
+        this.power = '';
+        this.live = true;
     }
 
 }

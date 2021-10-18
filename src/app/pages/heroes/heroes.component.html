@@ -21,8 +21,8 @@
   <tbody>
     <tr *ngFor="let heroe of heroes; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ heroe.nombre }}</td>
-      <td>{{ heroe.poder }}</td>
+      <td>{{ heroe.name }}</td>
+      <td>{{ heroe.power }}</td>
       <td>
 
         <label *ngIf="heroe.vivo" class="badge badge-success">Vivo</label>
@@ -35,7 +35,7 @@
           <i class="fa fa-pen"></i>
         </button>
 
-        <button class="btn btn-danger" (click)="borrarHeroe( heroe, i ) ">
+        <button class="btn btn-danger" (click)="deleteHeroe( heroe, i ) ">
           <i class="fa fa-trash"></i>
         </button>
 
