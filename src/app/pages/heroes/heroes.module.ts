@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -9,7 +10,8 @@ import { HeroesRoutingModule } from './heroes-routing.module';
   declarations: [HeroesComponent],
   imports: [
     CommonModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    MatTableModule
   ],
   exports: [HeroesComponent]
 })
