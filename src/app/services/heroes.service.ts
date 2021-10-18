@@ -83,7 +83,7 @@ export class HeroesService {
 
   searchHeroes(termino: string) {
 
-    let heroesArr: any[] = [];
+    // let heroesArr: any[] = [];
     termino = termino.toLowerCase();
 
     // for (let i = 0; i < this.heroes.length; i++) {
