@@ -1,0 +1,14 @@
+{
+    "banner": {
+      "hello": "Bonjour",
+      "world": "monde",
+      "change_lang_label": "Changer la langue à partir du menu déroulant ci-dessous",
+      "title": "Lista de heroes",
+      "add": "Añadir",
+      "name": "Nombre",
+      "power": "Poder",
+      "state": "Estado",
+      "back": "Regresar",
+      "save": "Guardar"
+    }
+  }

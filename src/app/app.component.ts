@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { delay } from 'rxjs/operators';
+import { LocalizationService } from './internationalization/localization.service';
 import { LoadingService } from './services/loading.service';
 
 @Component({
@@ -11,12 +12,28 @@ export class AppComponent {
   title = 'angular-boilerplate';
   loading: boolean = false;
 
+  language: string = 'es-ES';
+  // get name(): string {
+  //   return this.localizationService.translate('banner.world');
+  // }
+
   constructor(
-    private _loading: LoadingService
+    private _loading: LoadingService,
+    private localizationService: LocalizationService
   ) { }
 
   ngOnInit() {
     this.listenToLoading();
+  }
+
+  // get name(): string {
+  //   return this.localizationService.translate('banner.world');
+  // }
+
+  onSelect(lang: string): void {
+    localStorage.setItem('language', lang);
+    this.localizationService.initService();
+    console.log(lang);
   }
 
   /**
