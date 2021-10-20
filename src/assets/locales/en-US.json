@@ -2,13 +2,20 @@
   "banner": {
     "hello": "Bonjour",
     "world": "monde",
-    "change_lang_label": "Changer la langue à partir du menu déroulant ci-dessous",
+    "language": "Language",
     "title": "List of Heroes",
-    "add": "add",
+    "add": "Add",
+    "id": "Id",
     "name": "Name",
     "power": "Power",
-    "state": "State",
+    "idHero": "Hero's id",
+    "nameHero": "Hero's name",
+    "powerHero": "Hero's power",
     "back": "Back",
-    "save": "Save"
+    "save": "Save",
+    "loading": "Loading",
+    "record": "No records",
+    "wait": "Wait please",
+    "autoGenerate": "This field is self-generated"
   }
 }

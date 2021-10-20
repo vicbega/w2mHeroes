@@ -1,5 +1,5 @@
 
-<h1>Héroe <small>Nombre del Héroe</small> </h1>
+<h1>Héroe</h1>
 <hr>
 
 
@@ -8,7 +8,7 @@
     <button class="btn btn-danger"
             routerLink="/heroes">
       <i class="fa fa-arrow-left"></i>
-      Regresar
+      {{'banner.back' | translate}}
     </button>
   </div>
 </div>
@@ -22,21 +22,21 @@
           [formGroup]="heroeForm">
 
       <div class="form-group">
-        <label>Firebase ID</label>
+        <label>{{'banner.id' | translate}}</label>
         <input type="text"
                class="form-control"
-               placeholder="Firebase ID"
+               placeholder="{{'banner.idHero' | translate}}"
                formControlName="heroeIdFormControl"
                name="id">
-        <small class="form-text text-muted">Este campo es autogenerado</small>
+        <small class="form-text text-muted">{{'banner.autoGenerate' | translate}}</small>
       </div>
 
 
       <div class="form-group">
-          <label>Nombre</label>
+          <label>{{'banner.name' | translate}}</label>
           <input type="text"
                  class="form-control"
-                 placeholder="Nombre del héroe"
+                 placeholder="{{'banner.nameHero' | translate}}"
                  formControlName="heroeNameFormControl"
                  name="nombre"
                  appUppercase
@@ -44,48 +44,24 @@
       </div>
 
       <div class="form-group">
-          <label>Poder</label>
+          <label>{{'banner.power' | translate}}</label>
           <input type="text"
                  class="form-control"
                  formControlName="heroePowerFormControl"
                  name="poder"
-                 placeholder="Poder del héroe">
+                 placeholder="{{'banner.powerHero' | translate}}">
       </div>
-
-      <div class="form-group">
-        <label>Estado</label>
-        <br>
-
-        <button *ngIf="heroe.live" 
-                (click)="heroe.live = false"
-                class="btn btn-outline-success w-50" type="button">
-          <i class="fa fa-smile-wink"></i>
-          Vivo
-        </button>
-
-        <button *ngIf="!heroe.live" 
-                (click)="heroe.live = true"
-                class="btn btn-outline-danger w-50" type="button">
-            <i class="fa fa-dizzy"></i>
-            Muerto
-        </button>
-
-      </div>
-
-
 
       <hr>
       <div class="form-group text-center">
         <button type="submit"
                 class="btn btn-primary w-25">
           <i class="fa fa-save"></i>
-          Guardar
+          {{'banner.save' | translate}}
         </button>
       </div>
 
-
     </form>
-
 
   </div>
 </div>

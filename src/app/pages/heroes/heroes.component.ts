@@ -34,7 +34,7 @@ export class HeroesComponent implements OnInit, AfterViewInit {
 
   loading: boolean = false;
 
-  displayedColumns: string[] = ['id', 'name', 'power', 'live', 'editDelete'];
+  displayedColumns: string[] = ['id', 'name', 'power', 'editDelete'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
 

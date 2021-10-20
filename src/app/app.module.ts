@@ -34,7 +34,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    InternationalizationModule.forRoot({ locale_id: 'en-US' }),
+    InternationalizationModule.forRoot({ locale_id: 'es-ES' }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

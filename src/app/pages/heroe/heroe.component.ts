@@ -17,7 +17,7 @@ import { delay } from 'rxjs/operators';
 })
 export class HeroeComponent implements OnInit {
 
-  heroeForm: FormGroup;
+  heroeForm: FormGroup | undefined;
 
   heroe: HeroeModel;
 
@@ -25,13 +25,13 @@ export class HeroeComponent implements OnInit {
 
   constructor(
     private heroesService: HeroesService,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private _loading: LoadingService
+    private route?: ActivatedRoute,
+    private formBuilder?: FormBuilder,
+    private _loading?: LoadingService
   ) {
-    this.heroeForm = this.formBuilder.group({
+    this.heroeForm = this.formBuilder?.group({
       heroeIdFormControl: ['',],
-      heroeNameFormControl: ['',],
+      heroeNameFormControl: ['', Validators.required],
       heroePowerFormControl: ['',]
     });
     this.heroe = {};
@@ -41,7 +41,7 @@ export class HeroeComponent implements OnInit {
 
     this.listenToLoading();
 
-    const id = this.route.snapshot.paramMap.get('id');
+    const id: any = this.route?.snapshot.paramMap.get('id');
 
     if (id !== 'nuevo') {
 
@@ -49,9 +49,9 @@ export class HeroeComponent implements OnInit {
         .subscribe((resp: HeroeModel) => {
           this.heroe = resp;
           this.heroe.id = id;
-          this.heroeForm.get('heroeIdFormControl')?.setValue(this.heroe.id);
-          this.heroeForm.get('heroeNameFormControl')?.setValue(this.heroe.name);
-          this.heroeForm.get('heroePowerFormControl')?.setValue(this.heroe.power);
+          this.heroeForm?.get('heroeIdFormControl')?.setValue(this.heroe.id);
+          this.heroeForm?.get('heroeNameFormControl')?.setValue(this.heroe.name);
+          this.heroeForm?.get('heroePowerFormControl')?.setValue(this.heroe.power);
         });
 
     }
@@ -59,7 +59,7 @@ export class HeroeComponent implements OnInit {
   }
 
   listenToLoading(): void {
-    this._loading.loadingSub
+    this._loading?.loadingSub
       .pipe(delay(0)) // This prevents a ExpressionChangedAfterItHasBeenCheckedError for subsequent requests
       .subscribe((loading) => {
         this.loading = loading;
@@ -80,9 +80,9 @@ export class HeroeComponent implements OnInit {
     );
     Swal.showLoading();
 
-    this.heroe.id = this.heroeForm.value.heroeIdFormControl;
-    this.heroe.name = this.heroeForm.value.heroeNameFormControl;
-    this.heroe.power = this.heroeForm.value.heroePowerFormControl;
+    this.heroe.id = this.heroeForm?.value.heroeIdFormControl;
+    this.heroe.name = this.heroeForm?.value.heroeNameFormControl;
+    this.heroe.power = this.heroeForm?.value.heroePowerFormControl;
 
     let peticion: Observable<any>;
 

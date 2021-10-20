@@ -1,14 +1,21 @@
 {
-    "banner": {
-      "hello": "Bonjour",
-      "world": "monde",
-      "change_lang_label": "Changer la langue à partir du menu déroulant ci-dessous",
-      "title": "Lista de heroes",
-      "add": "Añadir",
-      "name": "Nombre",
-      "power": "Poder",
-      "state": "Estado",
-      "back": "Regresar",
-      "save": "Guardar"
-    }
+  "banner": {
+    "hello": "Bonjour",
+    "world": "monde",
+    "language": "Idioma",
+    "title": "Lista de heroes",
+    "add": "Añadir",
+    "id": "Id",
+    "name": "Nombre",
+    "power": "Poder",
+    "idHero": "Id del heroe",
+    "nameHero": "Nombre del heroe",
+    "powerHero": "Poder del heroe",
+    "back": "Regresar",
+    "save": "Guardar",
+    "loading": "Cargando",
+    "record": "No hay registros",
+    "wait": "Espere por favor",
+    "autoGenerate": "Este campo es autogenerado"
   }
+}
